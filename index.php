@@ -1,4 +1,6 @@
 <?php
+
+/*
 $model = new Model();
 //It is important that the controller and the view share the model
 $controller = new Controller($model);
@@ -9,3 +11,9 @@ if(isset($_GET['action']) && !empty($_GET['action'])){
 }
 
 echo $view->output();
+*/
+
+$frontController = new FrontController(new Router, $_GET['route'], isset($_GET['action']) ? $_GET['action'] : null); 
+echo $frontController->output();
+
+?>

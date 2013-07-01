@@ -1,20 +1,23 @@
 <?php
 class Router 
 { 
-    private $rules = array(); 
+    private $table = array(); 
      
-    public function addRule(RouterRule $rule) 
+    public function __construct() 
 	{ 
-        $this->rules[] = $rule; 
+        $this->table['controller'] = new Route('Model', 'View', 'Controller');   
     } 
      
-    public function getRoute(array $route) 
+    public function getRoute($route) 
 	{ 
-        foreach ($this->rules as $rule) 
+        $route = strtolower($route); 
+
+        //Return a default route if no route is found 
+        if (!isset($this->table[$route]))
 		{ 
-            if ($found = $rule->find($route)) return $found;     
+            return $this->table['controller'];     
         } 
          
-        throw new Exception('No matching route found'); 
+        return $this->table[$route];         
     } 
 }

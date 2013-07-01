@@ -1,22 +1,14 @@
 <?php
 class Route 
-{
-	private $view; 
-    private $controller; 
-
-    public function __construct(View $view, $controller = null) 
+{ 
+    public $model; 
+    public $view; 
+    public $controller; 
+     
+    public function __construct($model, $view, $controller) 
 	{ 
+        $this->model = $model; 
         $this->view = $view; 
-        $this->controller = $controller; 
-    } 
-
-    public function getView() 
-	{ 
-        return $this->view; 
-    } 
-
-    public function getController() 
-	{ 
-        return $this->controller; 
+        $this->controller = $controller;         
     } 
 }
