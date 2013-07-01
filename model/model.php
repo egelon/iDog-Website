@@ -1,12 +1,12 @@
 <?php
 class Model
 {
-    public $tstring;
+    public $text;
     public $template;
 	
-    public function __construct() {
-    $this->tstring = "My model/'s string. Click it!";
-	$this->template = "templates/template.php"
-    }
-        
+    public function __construct() 
+	{
+		$this->text = "My model/'s string. Click it!";
+		$this->template = "templates/template.php"
+    }  
 }
