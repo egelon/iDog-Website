@@ -10,6 +10,7 @@ class View
     }
     
     public function output(){
-        return '<p><a href="index.php?action=clicked"' . $this->model->string . '</a></p>';
-    }
+		$data = '<p><a href="index.php?action=clicked"' . $this->model->string . '</a></p>';
+		require_once($this->model->template);
+	}
 }
