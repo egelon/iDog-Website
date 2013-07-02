@@ -1,4 +1,5 @@
 <?php
+require_once('router\route.php');
 class Router 
 { 
     private $table = array(); 

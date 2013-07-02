@@ -1,5 +1,6 @@
 <?php
-
+require_once('router\router.php');
+require_once('router\frontController.php');
 /*
 $model = new Model();
 //It is important that the controller and the view share the model

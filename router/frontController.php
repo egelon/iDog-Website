@@ -1,4 +1,7 @@
 <?php
+require_once('model\model.php');
+require_once('controller\controller.php');
+require_once('view\view.php');
 class FrontController 
 { 
     private $controller; 
@@ -25,7 +28,7 @@ class FrontController
     public function output() 
 	{ 
         //This allows for some consistent layout generation code  
-        $header = '<h1>Hello world example</h1>'; 
+        $header = '<h1>First page test</h1>'; 
         return $header . '<div>' . $this->view->output() . '</div>'; 
     } 
 } 

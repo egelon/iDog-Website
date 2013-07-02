@@ -7,6 +7,6 @@ class Model
     public function __construct() 
 	{
 		$this->text = "My model/'s string. Click it!";
-		$this->template = "templates/template.php"
+		$this->template = "templates/template.php";
     }  
 }
