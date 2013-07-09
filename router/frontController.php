@@ -1,7 +1,6 @@
 <?php
-require_once('model\model.php');
-require_once('controller\controller.php');
-require_once('view\view.php');
+require_once('include.php');
+
 class FrontController 
 { 
     private $controller; 
@@ -9,10 +8,11 @@ class FrontController
      
     public function __construct(Router $router, $routeName, $action = null) 
 	{ 
-        $route = $router->getRoute($routeName); 
+        $route = $router->getRoute($routeName);
+
         $modelName = $route->model; 
         $controllerName = $route->controller; 
-        $viewName = $route->view; 
+        $viewName = $route->view;
          
         $model = new $modelName; 
         $this->controller = new $controllerName($model); 
@@ -28,7 +28,16 @@ class FrontController
     public function output() 
 	{ 
         //This allows for some consistent layout generation code  
-        $header = '<h1>My header - from frontController.php</h1>'; 
-        return $header . '<div>' . $this->view->output() . '</div>'; 
+        $header = '
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=\'utf-8\'> 
+                <title>Title of the document</title>
+
+            </head>
+
+        '; 
+        return $header . $this->view->output() . '</html>'; 
     } 
 } 
