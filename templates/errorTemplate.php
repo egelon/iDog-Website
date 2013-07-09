@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>iDog</title>
   <link type="text/css" rel="stylesheet" href="css/pageNav.css"/>
+  <link type="text/css" rel="stylesheet" href="css/common.css"/>
 	<link type="text/css" rel="stylesheet" href="css/errorTemplate.css"/>
   <!--
     <script type="text/javascript" src="js/jquery-1.10.0.min.js"></script>
@@ -13,10 +14,11 @@
 
 <body>
  
-<div id="container">
-<header>
-	<?php require_once('page_navigation.php')?>
+ <header>
+  <?php require_once('page_navigation.php')?>
 </header>
+<div id="container">
+
   <div id="pageContent">
     <h1>404</h1>
     <br>
@@ -27,9 +29,24 @@
     </div>
   </div>	
 
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>sfdadfasdfasdfsadf<br>
+
+
 
 <footer></footer>
-
 </div>
 </body>
 </html>
