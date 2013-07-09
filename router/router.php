@@ -7,7 +7,7 @@ class Router
     public function __construct() 
 	{
         //this is from the example tutorial, we must remove it later
-        $this->table['controller'] = new Route('Model', 'View', 'Controller');
+        //$this->table['controller'] = new Route('Model', 'View', 'Controller');
 
         $this->table['error'] = new Route('errorModel', 'errorView', 'errorController');
 

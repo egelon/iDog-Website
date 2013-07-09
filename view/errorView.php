@@ -16,13 +16,17 @@ class errorView
 	{
 		//variables here must be called the same as those in the template
 		
-		require_once($this->model->template);
 		$errorMsg = 
 		'
-			It seems the page you requested could not be found.
+			<span id="errorText">
+				It seems the page you requested could not be found.<br>Try going somewhere else.
+			</span>
 			<br>
-			<a href="index.php">Go back</a>
+			<span id="errorBackLink">
+				<a href="index.php">Go back</a>
+			</span>
+			
 		';
-		
+		require_once($this->model->template);
 	}
 }
