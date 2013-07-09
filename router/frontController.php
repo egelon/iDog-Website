@@ -28,7 +28,7 @@ class FrontController
     public function output() 
 	{ 
         //This allows for some consistent layout generation code  
-        $header = '<h1>First page test</h1>'; 
+        $header = '<h1>My header - from frontController.php</h1>'; 
         return $header . '<div>' . $this->view->output() . '</div>'; 
     } 
 } 
