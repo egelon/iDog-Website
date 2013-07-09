@@ -18,6 +18,7 @@
 <header>
 	<?php require_once('page_navigation.php')?>
 </header>
+
   <div id="pageContent">
     <h1>404</h1>
     <br>
@@ -29,7 +30,9 @@
   </div>	
 
 
-<footer></footer>
+<footer>
+  <?php require_once('page_footer.php')?>
+</footer>
 
 </div>
 </body>

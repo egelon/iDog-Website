@@ -19,7 +19,7 @@ class errorView
 		$errorMsg = 
 		'
 			<span id="errorText">
-				It seems the page you requested could not be found.<br>Try going somewhere else.
+				It seems the page you requested could not be found :(<br>Try going somewhere else.
 			</span>
 			<br>
 			<span id="errorBackLink">
