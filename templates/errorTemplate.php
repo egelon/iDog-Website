@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>iDog</title>
+  <link type="text/css" rel="stylesheet" href="css/common.css"/>
   <link type="text/css" rel="stylesheet" href="css/pageNav.css"/>
 	<link type="text/css" rel="stylesheet" href="css/errorTemplate.css"/>
   <!--
