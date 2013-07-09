@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="charset=utf-8">
-	<title>The Template name</title>
+	<title>iDog</title>
 </head>
 <body>
 	<div>

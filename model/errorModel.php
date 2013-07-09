@@ -5,6 +5,6 @@ class errorModel
 	
     public function __construct() 
 	{
-		$this->template = "templates/template.php";
+		$this->template = "templates/errorTemplate.php";
     }  
 }

@@ -1,0 +1,202 @@
+
+
+body 
+{
+
+	background-image:url('back.jpg');
+	background-color: #FF0066;
+
+}
+
+#main 
+{
+	position: fixed;
+	margin-left: 10%;
+	margin-right: 10%;
+	/*background-color: #FFADAD;*/
+	opacity: 1;
+	width: 80%;
+	height: 100%;
+	overflow-y: scroll;
+	text-align: center;
+	border: 1px solid black;
+	background:orange;
+	background:linear-gradient(top, #fb0, #fd662c); 
+	background:-moz-linear-gradient(top, #fb0, #fd662c); 
+	background:-webkit-linear-gradient(top, #fb0, #fd662c); 
+	background:-o-linear-gradient(top, #fb0, #fd662c); 
+	background:-ms-linear-gradient(top, #fb0, #fd662c);
+
+}
+
+#logo {
+
+	width: 220px;
+	height: 180px;
+	margin-top: 0px;
+	margin-left: 0px;
+	float: left;
+	display: inline-block;
+	opacity: 1;
+	margin-bottom: 0px;
+}
+
+h1 {
+
+	display: inline-block;
+	width: 620px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #FF0066;
+	margin-bottom: 15px;
+
+}
+
+h2 {
+	margin-left: 270px;
+	margin-right: 50px;
+	color: #FF6699;
+	font-size: 20px;
+	margin-top: 0px;
+	text-align: right;
+}
+
+#nav_table
+{
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 60px;
+	opacity: 1;
+	width: 80%;
+
+}
+
+#first 
+{
+	height: 60px;
+	width: 160px;
+	background-color: #cc188c;
+background:linear-gradient(top, #cc188c, #FFADAD); 
+background:-moz-linear-gradient(top, #cc188c, #FFADAD); 
+background:-webkit-linear-gradient(top, #cc188c, #FFADAD); 
+background:-o-linear-gradient(top, #cc188c, #FFADAD); 
+background:-ms-linear-gradient(top, #cc188c, #FFADAD);
+	margin-right: 0px;
+	margin-left: 0px;
+	border-radius: 5%;
+	text-align: center;
+	margin-top: 40px;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	opacity: 1;
+}
+
+#second 
+{
+	height: 60px;
+	width: 160px;
+	background-color: #f8389e;
+background:linear-gradient(top, #f8389e, #FFADAD); 
+background:-moz-linear-gradient(top, #f8389e, #FFADAD); 
+background:-webkit-linear-gradient(top, #f8389e, #FFADAD); 
+background:-o-linear-gradient(top, #f8389e, #FFADAD); 
+background:-ms-linear-gradient(top, #f8389e, #FFADAD);
+	margin-right: 0px;
+	margin-left: 0px;
+	border-radius: 5%;
+	text-align: center;
+	margin-top: 40px;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	opacity: 1;
+}
+#third {
+	height: 60px;
+	width: 160px;
+	background-color: #fd3025;
+background:linear-gradient(top, #fd3025, #FFADAD); 
+background:-moz-linear-gradient(top, #fd3025, #FFADAD); 
+background:-webkit-linear-gradient(top, #fd3025, #FFADAD); 
+background:-o-linear-gradient(top, #fd3025, #FFADAD); 
+background:-ms-linear-gradient(top, #fd3025, #FFADAD);
+	margin-right: 0px;
+	margin-left: 0px;
+	border-radius: 5%;
+	text-align: center;
+	margin-top: 40px;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	opacity: 1;
+}
+#fourth 
+{
+	height: 60px;
+	width: 160px;
+	background-color: #fd662c;
+background:linear-gradient(top, #fd662c, #FFADAD); 
+background:-moz-linear-gradient(top, #fd662c, #FFADAD); 
+background:-webkit-linear-gradient(top, #fd662c, #FFADAD); 
+background:-o-linear-gradient(top, #fd662c, #FFADAD); 
+background:-ms-linear-gradient(top, #fd662c, #FFADAD);
+	margin-right: 0px;
+	margin-left: 0px;
+	border-radius: 5%;
+	text-align: center;
+	margin-top: 40px;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	opacity: 1;
+}
+#fifth 
+{
+	height: 60px;
+	width: 160px;
+	background-color: #f99d1c;
+	background:linear-gradient(top, #f99d1c, #FFADAD); 
+	background:-moz-linear-gradient(top, #f99d1c, #FFADAD); 
+	background:-webkit-linear-gradient(top, #f99d1c, #FFADAD); 
+	background:-o-linear-gradient(top, #f99d1c, #FFADAD); 
+ 	background:-ms-linear-gradient(top, #f99d1c, #FFADAD);
+	margin-right: 0px;
+	margin-left: 0px;
+	border-radius: 5%;
+	text-align: center;
+	margin-top: 40px;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	opacity: 1;
+}
+
+#first:hover, #second:hover, #third:hover, #fourth:hover, #fifth:hover 
+{
+-moz-transform: scale(1.05);
+-webkit-transform: scale(1.05);
+}
+
+#content
+{
+	display: hidden;
+}
+
+#slideshow
+{
+	width: 250px;
+	height: 150px;
+	border: 0px;
+}
+
+a 
+{
+	text-decoration: none;
+	color: white;
+}
+
+footer
+{
+	height: 2000px;
+}

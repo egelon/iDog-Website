@@ -16,8 +16,13 @@ class errorView
 	{
 		//variables here must be called the same as those in the template
 		
-		//action=SOME_ACTION : SOME_ACTION must be the name of a function in the corresponding controller
-		$data = '404 - The page you requested could not be found.<br><a href="index.php">Go back</a>';
 		require_once($this->model->template);
+		$errorMsg = 
+		'
+			It seems the page you requested could not be found.
+			<br>
+			<a href="index.php">Go back</a>
+		';
+		
 	}
 }
