@@ -22,7 +22,9 @@ nav ul
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
 	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
 	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-	padding: 0 20px;
+	/*top/bittom padding, left/right padding for the entire menu bar*/
+	padding: 0 10px;
+	/*the padding must be >= the border-radius or else it looks weird*/
 	border-radius: 10px;  
 	list-style: none;
 	position: relative;
@@ -30,7 +32,9 @@ nav ul
 }
 	nav ul:after 
 	{
-		content: ""; clear: both; display: block;
+		content: "";
+		clear: both;
+		display: block;
 	}
 
 	nav ul li 
@@ -51,25 +55,33 @@ nav ul
 		
 		nav ul li a 
 		{
-			display: block; padding: 25px 40px;
-			color: #757575; text-decoration: none;
+			/*the menu buttons themselves*/
+			display: block; 
+			padding: 15px 20px; /*size of menu buttons: top/bittom padding, left/right padding*/
+			color: #757575;
+			text-decoration: none;
 		}
 			
 		
 	nav ul ul 
 	{
-		background: #5f6975; border-radius: 0px; padding: 0;
-		position: absolute; top: 100%;
+		background: #5f6975;
+		border-radius: 0px;
+		padding: 0;
+		position: absolute;
+		top: 100%;
 	}
 		nav ul ul li 
 		{
 			float: none; 
 			border-top: 1px solid #6b727c;
-			border-bottom: 1px solid #575f6a; position: relative;
+			border-bottom: 1px solid #575f6a;
+			position: relative;
 		}
 			nav ul ul li a 
 			{
-				padding: 15px 40px;
+				/*dropdown menu items*/
+				padding: 15px 40px; /*the size of the dropdown menu items: top/bittom padding, left/right padding*/
 				color: #fff;
 			}	
 				nav ul ul li a:hover 
@@ -79,5 +91,7 @@ nav ul
 		
 	nav ul ul ul 
 	{
-		position: absolute; left: 100%; top:0;
+		position: absolute;
+		left: 100%;
+		top:0;
 	}
