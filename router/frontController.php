@@ -28,16 +28,8 @@ class FrontController
     public function output() 
 	{ 
         //This allows for some consistent layout generation code  
-        $header = '
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset=\'utf-8\'> 
-                <title>Title of the document</title>
-
-            </head>
-
-        '; 
-        return $header . $this->view->output() . '</html>'; 
+        //$header = ''; 
+        //return $header . $this->view->output() . '</html>'; 
+        return $this->view->output();
     } 
 } 
