@@ -6,7 +6,7 @@
   <link type="text/css" rel="stylesheet" href="css/common.css"/>
   <link type="text/css" rel="stylesheet" href="css/pageNav.css"/>
 	<link type="text/css" rel="stylesheet" href="css/loginForm.css"/>
-  <link type="text/css" rel="stylesheet" href="css/normalize.css"/>
+  
   <!--
     <script type="text/javascript" src="js/jquery-1.10.0.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
