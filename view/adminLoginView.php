@@ -21,11 +21,11 @@ class adminLoginView
 		$adminLoginForm = 
 		'
 			<section class="loginform cf">
-				<form name="login" action="index_submit" method="get" accept-charset="utf-8">
+				<form name="login" action="../register/admin_login.php" method="post">
 					<ul>
 						<li>
-							<label for="usermail">Email</label>
-							<input type="email" name="usermail" placeholder="yourname@email.com" required>
+							<label for="email">Email</label>
+							<input type="email" name="email" placeholder="yourname@email.com" required>
 						</li>
 						<li>
 							<label for="password">Password</label>
