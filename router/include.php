@@ -15,3 +15,7 @@ require_once($controllersFolder . 'errorController.php');
 require_once($modelsFolder . 'adminLoginModel.php');
 require_once($viewsFolder . 'adminLoginView.php');
 require_once($controllersFolder . 'adminLoginController.php');
+
+require_once($modelsFolder . 'mainModel.php');
+require_once($viewsFolder . 'mainView.php');
+require_once($controllersFolder . 'mainController.php');

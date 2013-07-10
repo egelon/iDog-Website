@@ -11,6 +11,8 @@ class Router
 
         $this->table['error'] = new Route('errorModel', 'errorView', 'errorController');
         $this->table['administrator'] = new Route('adminLoginModel', 'adminLoginView', 'adminLoginController');
+
+        $this->table['main'] = new Route('mainModel', 'mainView', 'mainController');
         
 		// Add routes here
 		//routes should be in the form:
