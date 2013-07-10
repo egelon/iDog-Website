@@ -14,27 +14,27 @@
 
 <body>
  
-<div id="container">
+  <div id="container">
 
 
-  <div id="pageContent">
-    <header>
-      <?php require_once('page_navigation.php')?>
-    </header>
-    <h1>404</h1>
-    <br>
-    <h2>Uh...oh</h2>
-    <br>
-    <div class="errorBox">
-      <?php echo $errorMsg; ?>
-    </div>
-  </div>	
+    <div id="pageContent">
+      <header>
+        <?php require_once('page_navigation.php')?>
+      </header>
+      <h1>404</h1>
+      <br>
+      <h2>Uh...oh</h2>
+      <br>
+      <div class="errorBox">
+        <?php echo $errorMsg; ?>
+      </div>
+    </div>	
 
 
-<footer>
-  <?php require_once('page_footer.php')?>
-</footer>
+    <footer>
+      <?php require_once('page_footer.php')?>
+    </footer>
 
-</div>
+  </div>
 </body>
 </html>
