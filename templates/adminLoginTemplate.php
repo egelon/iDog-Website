@@ -15,20 +15,20 @@
 
 <body>
  
-<div id="container">
-<header>
-	<?php require_once('page_navigation.php')?>
-</header>
+  <div id="container">
 
-  <div id="pageContent">
-      <?php echo $adminLoginForm; ?>
-  </div>	
+    <div id="pageContent">
+      <header>
+        <?php require_once('page_navigation.php')?>
+      </header>
 
+        <?php echo $adminLoginForm; ?>
+    </div>	
 
-<footer>
-  <?php require_once('page_footer.php')?>
-</footer>
+    <footer>
+      <?php require_once('page_footer.php')?>
+    </footer>
 
-</div>
+  </div>
 </body>
 </html>
