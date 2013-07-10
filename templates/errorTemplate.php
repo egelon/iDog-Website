@@ -15,11 +15,12 @@
 <body>
  
 <div id="container">
-<header>
-	<?php require_once('page_navigation.php')?>
-</header>
+
 
   <div id="pageContent">
+    <header>
+      <?php require_once('page_navigation.php')?>
+    </header>
     <h1>404</h1>
     <br>
     <h2>Uh...oh</h2>
