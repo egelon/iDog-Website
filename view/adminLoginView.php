@@ -20,8 +20,6 @@ class adminLoginView
 		
 		$adminLoginForm = 
 		'
-			TODO: FIX IT!!!!!
-
 			<section class="loginform cf">
 				<form name="login" action="index_submit" method="get" accept-charset="utf-8">
 					<ul>
@@ -38,8 +36,6 @@ class adminLoginView
 					</ul>
 				</form>
 			</section>
-
-			
 		';
 		require_once($this->model->template);
 	}
