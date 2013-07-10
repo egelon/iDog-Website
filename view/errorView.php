@@ -1,5 +1,6 @@
 <?php
-require_once('model\errorModel.php');
+//require_once('model\errorModel.php');
+require_once('router\include.php');
 require_once('router\route.php');
 class errorView
 {
