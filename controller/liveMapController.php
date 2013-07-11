@@ -14,9 +14,4 @@ class liveMapController
     { 
         $this->model = $model; 
     }
-
-    public function pin()
-    {
-    		echo $this->model->geoCoordinates;
-    }
 }

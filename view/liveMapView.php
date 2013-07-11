@@ -17,7 +17,9 @@ class liveMapView
 	{
 		//variables here must be called the same as those in the template
 		$mainText = $this->model->mainScreenText;
-		
+		$id = $this->model->data['id'];
+		$lat = $this->model->data['lat'];
+		$lon = $this->model->data['lon'];
 
 		require_once($this->model->template);
 	}
