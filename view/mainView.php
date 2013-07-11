@@ -18,20 +18,20 @@ class mainView
 	{
 		//variables here must be called the same as those in the template
 		$mainText = $this->model->mainScreenText;
+		$databaseReplyText = $this->model->databaseReply;
 
 
 		$searchForm = 
 		'
 			<section class="searchForm cf">
-				<div id="message">meesaage</div>
-				<form id = "publicSearchForm" name="search" action="" method="POST"> FIX IT
+				<form id = "publicSearchForm" name="search" action="index.php?route=main&action=search" method="POST">
 					<ul>
 						<li>
 							<label for="dogId">Dog ID:</label>
-							<input type="number" name="dogId" id="dogId" class="text-input" placeholder="1234" required>
+							<input type="number" name="dogId" id="dogId" placeholder="1234" required>
 						</li>
 						<li>
-							<input type="submit" name="submit" class="button" value="Search" id="publicSearchButton">
+							<input type="submit" name="submit" value="Search">
 						</li>
 					</ul>
 				</form>

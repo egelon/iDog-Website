@@ -5,12 +5,15 @@ class mainModel
 {
 	public $template;
 	public $mainScreenText;
+	public $databaseReply;
 
 	public function __construct() 
 	{
 		$this->template = "templates/mainTemplate.php";
 
 		$this->mainScreenText = "Hello, welcome to iDog!";
+		$this->databaseReplyText = "Status...";
+
     }
 
     public function getDogCoordinates($id)
@@ -67,11 +70,12 @@ class mainModel
 
 	    if($row)
 	    {
-	        echo json_encode ($row);
+	        $url = 'index.php?route=liveMap&action=pin&data=' . json_encode ($row);
+	        header( "Location: $url" );
 	    }
 	    else
 	    {
-	        echo 'No dog with ID' . $id . 'found';
+	        $this->databaseReply = 'No dog with ID' . $id . 'found';
 	    }
 	}
 }

@@ -7,18 +7,6 @@
   <link type="text/css" rel="stylesheet" href="css/pageNav.css"/>
 	<link type="text/css" rel="stylesheet" href="css/loginForm.css"/>
     <script type="text/javascript" src="js/jquery-1.10.0.min.js"></script>
-
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
- 
-    <script> 
-        // wait for the DOM to be loaded 
-        $(document).ready(function() { 
-            // bind 'myForm' and provide a simple callback function 
-            $('#myForm').ajaxForm(function() { 
-                alert("Thank you for your comment!"); 
-            }); 
-        }); 
-    </script> 
     
 </head>
 
@@ -30,8 +18,9 @@
       <header>
         <?php require_once('page_navigation.php')?>
       </header>
-
+        <?php echo $mainText; ?><br>
         <?php echo $searchForm; ?>
+        <?php echo $databaseReplyText; ?>
     </div>
 
     <footer>
