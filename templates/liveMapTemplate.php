@@ -25,8 +25,8 @@
 
       <table width="100%" border="0">
         <tr>
-          <td align="left">
-            <img src="<?php echo $picture; ?>">
+          <td >
+            <img class="dogPicture" src="<?php echo $picture; ?>">
           </td>
 
           <td rowspan="2" align="center">
