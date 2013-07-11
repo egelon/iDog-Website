@@ -19,23 +19,10 @@ class FrontController
         $this->view = new $viewName($routeName, $model); 
          
          
-        if (!empty($action) && method_exists ($this->controller, $action))
+        if (!empty($action) && method_exists($this->controller, $action))
 		{
 			$this->controller->{$action}(); 
 		}
-        else
-        {
-            $route = $router->getRoute('error');
-
-            $modelName = $route->model; 
-            $controllerName = $route->controller; 
-            $viewName = $route->view;
-             
-            $model = new $modelName; 
-            $this->controller = new $controllerName($model); 
-            $this->view = new $viewName($routeName, $model); 
-             
-        }
     } 
      
     public function output() 
