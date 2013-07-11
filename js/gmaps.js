@@ -52,12 +52,13 @@ window.onload = function() {
 
             var lat = document.getElementById('lat').innerHTML;
             var lon = document.getElementById('lon').innerHTML;
+            var dogName = document.getElementById('dogName').innerHTML;
 
             var myLatLng = new google.maps.LatLng(lat, lon);
 
             // Create the Map Options
             var mapOptions = {
-              zoom: 8,
+              zoom: 15,
               center: myLatLng,
               mapTypeId: google.maps.MapTypeId.ROADMAP
             };
@@ -69,6 +70,6 @@ window.onload = function() {
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
-                title: 'Found you!'
+                title: dogName
             });
           }

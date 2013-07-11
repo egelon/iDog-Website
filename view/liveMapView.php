@@ -21,6 +21,12 @@ class liveMapView
 		$lat = $this->model->data['lat'];
 		$lon = $this->model->data['lon'];
 
+		$name = $this->model->dogName;
+		$gender = $this->model->gender;
+		$castrated = $this->model->castrated;
+		$picture = $this->model->pictureURL;
+		$addedBy = $this->model->addedBy;
+
 		require_once($this->model->template);
 	}
 }

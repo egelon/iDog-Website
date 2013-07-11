@@ -13,5 +13,6 @@ class liveMapController
     public function __construct(liveMapModel $model) 
     { 
         $this->model = $model; 
+        $this->model->getDogInfo($this->model->data['id']);
     }
 }

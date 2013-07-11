@@ -1,0 +1,17 @@
+
+#map 
+{ 
+	margin: 10px;
+
+	height: 400px;
+	width: 570px; 
+}
+
+.dogInformation
+{
+	text-align: left;
+	color:#999;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 18px;
+}
