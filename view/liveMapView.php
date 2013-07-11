@@ -1,5 +1,6 @@
 <?php
 require_once('router\include.php');
+require_once('router\route.php');
 
 class liveMapView
 {

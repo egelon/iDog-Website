@@ -5,6 +5,7 @@ class liveMapModel
 {
 	public $template;
 	public $mainScreenText;
+
 	public $dogID;
 	public $geoCoordinates;
 
@@ -13,7 +14,7 @@ class liveMapModel
 		$this->template = "templates/liveMapTemplate.php";
 
 		$this->mainScreenText = "Dog location";
-
+/*
 		if(!empty($_GET['id']))
 		{
 			$this->dogID = $_GET['id'];
@@ -23,9 +24,10 @@ class liveMapModel
 		{
 			$jsonString = $_GET['data'];	
 		}
-		$this->geoCoordinates = json_decode($jsonString);
+*/
+		$this->dogID = $_GET['id'];
+		$jsonString = $_GET['data'];
 
-		echo $this->dogID;
-		echo $this->geoCoordinates;
+		$this->geoCoordinates = json_decode($jsonString);
     }
 }
