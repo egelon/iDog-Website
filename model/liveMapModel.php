@@ -19,6 +19,6 @@ class liveMapModel
 			$jsonString = $_GET['data'];	
 		}
 
-		$this->data = json_decode($jsonString);
+		$this->data = json_decode($jsonString, true);
     }
 }

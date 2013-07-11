@@ -72,7 +72,7 @@ class mainModel
 	    if($row)
 	    {
 	    	//$arr = array('lat' => $row['lat'], 'lon' => $row['lon']);
-	        $url = 'index.php?route=liveMap&data=' . json_encode ($row);
+	        $url = './index.php?route=livemap&data=' . json_encode ($row);
 	        header( "Location: $url" );
 	    }
 	    else

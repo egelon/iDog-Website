@@ -8,10 +8,10 @@ class Router
 	{
         $this->table['error'] = new Route('errorModel', 'errorView', 'errorController');
         $this->table['administrator'] = new Route('adminLoginModel', 'adminLoginView', 'adminLoginController');
-        
-        $this->table['liveMap'] = new Route('liveMapModel', 'liveMapView', 'liveMapController');
+
+        //$this->table['livemap'] = new Route('liveMapModel', 'liveMapView', 'liveMapController');
         $this->table['main'] = new Route('mainModel', 'mainView', 'mainController');
-        
+        $this->table['livemap'] = new Route('liveMapModel', 'liveMapView', 'liveMapController');
         
 		// Add routes here
     } 
