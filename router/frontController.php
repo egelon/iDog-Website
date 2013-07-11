@@ -31,7 +31,10 @@ class FrontController
             $controllerName = $route->controller; 
             $viewName = $route->view;
              
-
+            $model = new $modelName; 
+            $this->controller = new $controllerName($model); 
+            $this->view = new $viewName($routeName, $model); 
+             
         }
     } 
      
