@@ -12,7 +12,7 @@ class mainModel
 		$this->template = "templates/mainTemplate.php";
 
 		$this->mainScreenText = "Hello, welcome to iDog!";
-		$this->databaseReplyText = "Status...";
+		$this->databaseReply = "Enter a dog's ID and press Search";
 
     }
 
@@ -40,6 +40,7 @@ class mainModel
 
         $query = " 
             SELECT 
+            	id,
                 lat, 
                 lon
             FROM dog_location 
@@ -70,12 +71,13 @@ class mainModel
 
 	    if($row)
 	    {
-	        $url = 'index.php?route=liveMap&action=pin&data=' . json_encode ($row);
+	    	$arr = array('lat' => $row['lat'], 'lon' => $row['lon']);
+	        $url = 'index.php?route=liveMap&action=pin&id=' . $row['id'] . '&data=' . json_encode ($arr);
 	        header( "Location: $url" );
 	    }
 	    else
 	    {
-	        $this->databaseReply = 'No dog with ID' . $id . 'found';
+	        $this->databaseReply = 'No dog with ID <b>' . $id . '</b> found';
 	    }
 	}
 }

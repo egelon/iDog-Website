@@ -1,6 +1,5 @@
 <?php
 require_once('router\include.php');
-
 require_once('router\route.php');
 
 class mainView
@@ -24,7 +23,7 @@ class mainView
 		$searchForm = 
 		'
 			<section class="searchForm cf">
-				<form id = "publicSearchForm" name="search" action="index.php?route=main&action=search" method="POST">
+				<form class = "searchform customform" name="search" action="index.php?route=main&action=search" method="POST">
 					<ul>
 						<li>
 							<label for="dogId">Dog ID:</label>
@@ -32,6 +31,9 @@ class mainView
 						</li>
 						<li>
 							<input type="submit" name="submit" value="Search">
+						</li>
+						<li>
+							<span class="databaseReply">'.$databaseReplyText.'</span>
 						</li>
 					</ul>
 				</form>

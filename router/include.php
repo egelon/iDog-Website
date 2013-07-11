@@ -19,3 +19,8 @@ require_once($controllersFolder . 'adminLoginController.php');
 require_once($modelsFolder . 'mainModel.php');
 require_once($viewsFolder . 'mainView.php');
 require_once($controllersFolder . 'mainController.php');
+
+require_once($modelsFolder . 'liveMapModel.php');
+require_once($viewsFolder . 'liveMapView.php');
+require_once($controllersFolder . 'liveMapController.php');
+
