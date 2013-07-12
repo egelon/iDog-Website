@@ -186,47 +186,8 @@ class mainModel
             die("Failed to run query: " . $ex->getMessage()); 
         }
 
-/*
 
-        //Upload the file
-		if(isset($_POST['picture']))
-		{
-			$allowedExts = array("jpeg", "jpg");
-			$temp = explode(".", $_FILES["picture"]["name"]);
-			$extension = end($temp);
-			if ((($_FILES["picture"]["type"] == "image/jpeg") || ($_FILES["picture"]["type"] == "image/jpg")) && ($_FILES["picture"]["size"] < 500000) && in_array($extension, $allowedExts))
-			{
-				if ($_FILES["picture"]["error"] > 0)
-			  	{
-			 		$this->databaseReply = "Return Code: " . $_FILES["picture"]["error"] . "<br>";
-			  	}
-				else
-			  	{
-			    	
-					    echo "Upload: " . $_FILES["picture"]["name"] . "<br>";
-					    echo "Type: " . $_FILES["picture"]["type"] . "<br>";
-					    echo "Size: " . ($_FILES["picture"]["size"] / 1024) . " kB<br>";
-					    echo "Temp file: " . $_FILES["picture"]["tmp_name"] . "<br>";
-					
-			    	$target = 'dog_img/' . $dogID . '.jpg';
-					if(move_uploaded_file($_FILES["picture"]["tmp_name"], $target))
-						$this->databaseReply = "Stored in: " . $target;
-					else
-						$this->databaseReply = "Error uploading file" . $target;
-			    }
-			}
-			else
-			{
-				$this->databaseReply = "Invalid file";
-			}
-		}
-		*/
-
-
-
-
-
-
+        //Upload the picture
 		$filename = $_FILES["picture"]["name"];
 		$file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
 		$file_ext = substr($filename, strripos($filename, '.')); // get file name
