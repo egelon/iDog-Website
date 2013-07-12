@@ -184,17 +184,18 @@ class registrationModel
         catch(PDOException $ex) 
         { 
             // Note: On a production website, you should not output $ex->getMessage(). 
-            // It may provide an attacker with helpful information about your code. 
-            $this->databaseReply = "Failed to connect to the database: " . $ex->getMessage(); 
+            // It may provide an attacker with helpful information about your code.  
             die("Failed to run query: " . $ex->getMessage()); 
         } 
          
         // This redirects the user back to the login page after they register 
-        header("Location: ..//index.php?route=main"); 
+        header("Location: .//index.php?route=main"); 
          
         // Calling die or exit after performing a redirect using the header function 
         // is critical.  The rest of your PHP script will continue to execute and 
         // will be sent to the user if you do not die or exit. 
         die("Redirecting to login.php"); 
     }
+
+
 }
