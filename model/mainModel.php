@@ -84,7 +84,7 @@ class mainModel
 	public function addNewDog($name, $gender, $castrated, $lat, $lon)
 	{
 		session_start();
-		
+
 		$username = "root"; 
 	    $password = "901205"; 
 	    $host = "localhost"; 
@@ -187,38 +187,90 @@ class mainModel
         }
 
 
-
+/*
         //Upload the file
 		if(isset($_POST['picture']))
 		{
 			$allowedExts = array("jpeg", "jpg");
 			$temp = explode(".", $_FILES["file"]["name"]);
 			$extension = end($temp);
-			if ((($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg")) && ($_FILES["file"]["size"] < 20000) && in_array($extension, $allowedExts))
+			if ((($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg")) && ($_FILES["file"]["size"] < 500000) && in_array($extension, $allowedExts))
 			{
 				if ($_FILES["file"]["error"] > 0)
 			  	{
-			 		echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+			 		$this->databaseReply = "Return Code: " . $_FILES["file"]["error"] . "<br>";
 			  	}
 				else
 			  	{
-			    	/*
+			    	
 					    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
 					    echo "Type: " . $_FILES["file"]["type"] . "<br>";
 					    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
 					    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
-					*/
-			    	
-					move_uploaded_file($_FILES["file"]["tmp_name"],
-					"dog_img/" . $dogID . ".jpg");
-					echo "Stored in: " . "dog_img/" . $dogID . ".jpg";
-			      	
+					
+			    	$target = 'dog_img/' . $dogID . '.jpg';
+					move_uploaded_file($_FILES["file"]["tmp_name"], $target);
+					$this->databaseReply = "Stored in: " . $target;
 			    }
 			}
 			else
 			{
-				echo "Invalid file";
+				$this->databaseReply = "Invalid file";
 			}
 		}
+
+*/
+
+
+		$new_file_name=$dogID . '.jpg';
+
+		//set where you want to store files
+		//in this example we keep file in folder upload 
+		//$new_file_name = new upload file name
+		//for example upload file name cartoon.gif . $path will be upload/cartoon.gif
+		$path= "dog_img/".$new_file_name;
+		if($ufile !=none)
+		{
+			if(copy($HTTP_POST_FILES['ufile']['tmp_name'], $path))
+			{
+				echo "Successful<BR/>"; 
+
+				//$new_file_name = new file name
+				//$HTTP_POST_FILES['ufile']['size'] = file size
+				//$HTTP_POST_FILES['ufile']['type'] = type of file
+				echo "File Name :".$new_file_name."<BR/>"; 
+				echo "File Size :".$HTTP_POST_FILES['ufile']['size']."<BR/>"; 
+				echo "File Type :".$HTTP_POST_FILES['ufile']['type']."<BR/>"; 
+			}
+			else
+			{
+				echo "Error";
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 }

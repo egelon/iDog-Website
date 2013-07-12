@@ -75,7 +75,6 @@ class liveMapModel
                 name,
                 gender,
                 castrated,
-                picture,
                 added_by 
             FROM dog_info 
             WHERE 
@@ -110,7 +109,7 @@ class liveMapModel
 	        $this->dogName = $row['name'];
 	        $this->gender = $row['gender'];
 	        $this->castrated = $row['castrated'];
-	        $this->pictureURL = $row['picture'];
+	        $this->pictureURL = 'dog_img/'. $row['id'] .  '.jpg';
 	        $this->addedBy = $row['added_by'];
 	    }
 	    else
