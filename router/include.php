@@ -27,4 +27,3 @@ require_once($controllersFolder . 'mainController.php');
 require_once($modelsFolder . 'liveMapModel.php');
 require_once($viewsFolder . 'liveMapView.php');
 require_once($controllersFolder . 'liveMapController.php');
-

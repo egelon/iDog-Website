@@ -84,8 +84,16 @@
              
             // Redirect the user to the private members-only page. 
 
-            header("Location: private.php"); 
-            die("Redirecting to: private.php"); 
+
+
+            $url = './index.php?route=adminpanel';
+            header( "Location: $url" );
+
+
+
+
+            //header("Location: private.php"); 
+            die("Redirecting to: ./index.php?route=adminpanel"); 
         } 
         else 
         { 
