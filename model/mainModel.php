@@ -83,7 +83,8 @@ class mainModel
 
 	public function addNewDog($name, $gender, $castrated, $lat, $lon)
 	{
-
+		session_start();
+		
 		$username = "root"; 
 	    $password = "901205"; 
 	    $host = "localhost"; 
@@ -110,14 +111,15 @@ class mainModel
             INSERT INTO dog_info ( 
                 name, 
                 gender, 
-                castrated
+                castrated,
+                added_by
                 
                 
             ) VALUES ( 
                 :name, 
                 :gender, 
-                :castrated
-                
+                :castrated,
+                :added_by
             ) 
         "; 
          
@@ -126,7 +128,7 @@ class mainModel
             ':name' => $name, 
             ':gender' => $gender, 
             ':castrated' => $castrated, 
-            
+            ':added_by' => $_SESSION['user']['id']
         ); 
          
         try 
@@ -218,5 +220,5 @@ class mainModel
 				echo "Invalid file";
 			}
 		}
-		
+	}
 }
