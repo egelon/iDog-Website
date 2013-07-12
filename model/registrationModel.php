@@ -189,7 +189,7 @@ class registrationModel
         } 
          
         // This redirects the user back to the login page after they register 
-        header("Location: ..//index.php?route=main"); 
+        header("Location: .//index.php?route=main"); 
          
         // Calling die or exit after performing a redirect using the header function 
         // is critical.  The rest of your PHP script will continue to execute and 
@@ -198,53 +198,4 @@ class registrationModel
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        $query = " 
-            FIX IT 
-        "; 
-	         
-	    // The parameter values 
-	    $query_params = array( 
-	         ':dogId' => $id // FIX
-	    ); 
-	         
-	    try 
-	    { 
-	        // Execute the query against the database 
-	        $stmt = $db->prepare($query); 
-	        $result = $stmt->execute($query_params); 
-	    } 
-	    catch(PDOException $ex) 
-	    { 
-		   // Note: On a production website, you should not output $ex->getMessage(). 
-	       // It may provide an attacker with helpful information about your code.  
-	        echo 'Failed to run query: ' . $ex->getMessage(); 
-	    } 
-	     /*    
-	    // Retrieve the dog location data from the database.
-	    $row = $stmt->fetch(); 
-
-	    if($row)
-	    {
-	    	//$arr = array('lat' => $row['lat'], 'lon' => $row['lon']);
-	        $url = './index.php?route=livemap&data=' . json_encode ($row);
-	        header( "Location: $url" );
-	    }
-	    else
-	    {
-	        $this->databaseReply = 'No dog with ID <b>' . $id . '</b> found';
-	    } */
-	}
 }
