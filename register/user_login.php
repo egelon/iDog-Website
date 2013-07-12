@@ -87,15 +87,16 @@
             // Redirect the user to the private members-only page. 
 
 
-
-            $url = './index.php?route=userprofile';
+            $url = '../index.php?route=main';
+            
+            //$url = './index.php?route=userprofile';
             header( "Location: $url" );
 
 
 
 
             //header("Location: private.php"); 
-            die("Redirecting to: ./index.php?route=userprofile"); 
+            die("Redirecting to: ../index.php?route=main"); 
         } 
         else 
         { 
