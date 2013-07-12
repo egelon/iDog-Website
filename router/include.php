@@ -32,3 +32,8 @@ require_once($modelsFolder . 'registrationModel.php');
 require_once($viewsFolder . 'registrationView.php');
 require_once($controllersFolder . 'registrationController.php');
 
+require_once($modelsFolder . 'userProfileModel.php');
+require_once($viewsFolder . 'userProfileView.php');
+require_once($controllersFolder . 'userProfileController.php');
+
+

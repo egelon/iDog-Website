@@ -43,28 +43,29 @@ class mainView
 		$loginForm = 
 		'
 			<section class="loginForm cf">
-				<form class = "loginform customform" name="login" action="FIX IT" method="POST">
+				<form class = "loginform customform" name="login" action="../register/user_login.php" method="POST">
 					<ul>
 						<li>
-							<label for="email">Dog ID:</label>
+							<label for="email">E-mail:</label>
 							<input type="text" name="email" id="emailField" placeholder="example@gmail.com" required>
 						</li>
 
 						<li>
-							<label for="password">Dog ID:</label>
+							<label for="password">Password:</label>
 							<input type="password" name="password" id="passwordField" placeholder="password" required>
 						</li>
 
 						<li>
 							<input type="submit" name="submit" value="Login">
 						</li>
-						
+
 						<li>
-						<a href="FIX IT">Register</a>
+							<a href="index.php?route=registration" id="regButton">Register</a>
 						</li>
 
 					</ul>
 				</form>
+
 			</section>
 		';
 		require_once($this->model->template);
