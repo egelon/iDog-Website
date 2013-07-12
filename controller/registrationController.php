@@ -18,6 +18,6 @@ class registrationController
     public function registeruser()
     {
     	if (isset($_POST['email']) && isset($_POST['password']))
-    		$this->model->registerUser($_POST['email'], $_POST['password'], $_POST['name'], $_POST['phone'])
+    		$this->model->registerUser($_POST['email'], $_POST['password'], $_POST['name'], $_POST['phone']);
     } 
 }
