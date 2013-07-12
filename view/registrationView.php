@@ -3,12 +3,12 @@ require_once('router\include.php');
 
 require_once('router\route.php');
 
-class adminPanelView
+class registrationView
 {
 	private $model; 
     private $route;
 
-    public function __construct($route, adminPanelModel $model) 
+    public function __construct($route, registrationModel $model) 
 	{ 
         $this->route = $route; 
         $this->model = $model; 
@@ -17,25 +17,31 @@ class adminPanelView
     public function output()
 	{
 		//variables here must be called the same as those in the template
-		
-		$adminEmail = "";
 
+		$mainText = "Fields, marked with * are required!";
 
-
-		$adminLoginForm = 
+		$registrationForm = 
 		'
 			<section class="loginform cf">
-				<form name="login" action="../register/admin_login.php" method="post">
+				<form name="register" action="index.php?route=registration&action=registeruser" method="post">
 					<ul>
 						<li>
-							<label for="email">Email</label>
+							<label for="email">Email *</label>
 							<input type="email" name="email" placeholder="yourname@email.com" required>
 						</li>
 						<li>
-							<label for="password">Password</label>
+							<label for="password">Password *</label>
 							<input type="password" name="password" placeholder="password" required></li>
 						<li>
-							<input type="submit" value="Login">
+						<li>
+							<label for="name">Name</label>
+							<input type="text" name="name" placeholder="Your name"></li>
+						<li>
+						<li>
+							<label for="phone">Phone number</label>
+							<input type="text" name="phone" placeholder="Your phone number"></li>
+						<li>
+							<input type="submit" value="Register">
 						</li>
 					</ul>
 				</form>
