@@ -36,7 +36,7 @@ session_start();
                   }
                   else
                   {
-                      echo 'Hello ' . $_SESSION['user']['name'] . ' | <a href="./register/user_logout.php">Logout</a>';
+                      echo 'Hello ' . $_SESSION['user']['name'] . ' | <a href="./register/user_logout.php" id="logoutLink">Logout</a>';
                       echo $addNewDogForm;
                   }
               ?>

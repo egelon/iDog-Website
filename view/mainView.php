@@ -72,7 +72,7 @@ class mainView
 		$addNewDogForm = 
 		'
 			<section class="searchForm cf">
-				<form class = "addform customform" name="search" action="index.php?route=main&action=add" method="POST" enctype="multipart/form-data">
+				<form enctype="multipart/form-data" class = "addform customform" name="search" action="index.php?route=main&action=add" method="POST">
 					<ul>
 						<li>
 							<label for="name">Dog name:</label>
