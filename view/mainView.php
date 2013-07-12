@@ -23,7 +23,9 @@ class mainView
 		$searchForm = 
 		'
 			<section class="cf">
-				<form class = "addform" name="search" action="index.php?route=main&action=search" method="POST">
+				<form class = "addform" name="search" action="index.php?route=main&action=search" method="GET">
+					<input type="hidden" name="route" value="main">
+					<input type="hidden" name="action" value="search">
 					<ul>
 						<li>
 							<label for="dogId">Dog ID:</label>

@@ -37,10 +37,33 @@ session_start();
                       echo 'Hello ' . $_SESSION['user']['name'] . ' | <a href="./register/user_logout.php" id="logoutLink">Logout</a><br><br>';
                       echo $mainText;
                       echo '<br>';
-        
+                      echo 
+                      '
+                      <table width="100%">
+                      <tr>
+                      <td>
+
+
+                      ';
                       echo $updateForm;
                       echo '<br>';
                       echo $databaseReplyText;
+
+                      echo 
+                      '
+                        </td>
+                        <td>
+                        <div class="cf addform">
+                      ';
+
+
+                      echo '<ul>';
+                      foreach ($usersDogs as $aDog)
+                      {
+                        echo  '<li><a href="index.php?route=main&action=search&dogId='. $aDog['id']. '">'.$aDog['id']. ' - ' .$aDog['name']. '</a></li>';
+        
+                      } 
+                      echo '</ul></td></tr></table>';
                   }
               ?>
 

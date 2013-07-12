@@ -24,8 +24,6 @@ class liveMapModel
 		$this->mainScreenText = "Dog location";
 		$this->databaseReply = "";
 
-
-
 		$this->dogID = "";
 		$this->dogName = "";
 		$this->gender = "";
@@ -33,18 +31,12 @@ class liveMapModel
 		$this->pictureURL = "";
 		$this->addedBy = "";
 
-
-
-
-
 		if(!empty($_GET['data']))
 		{
 			$jsonString = $_GET['data'];	
 		}
 
 		$this->data = json_decode($jsonString, true);
-
-		//getDogInfo($this->data['id']);
     }
 
     public function getDogInfo($id)

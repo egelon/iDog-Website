@@ -7,13 +7,72 @@ class userProfileModel
 	public $mainScreenText;
 	public $databaseReply;
 
+    public $dogsAdded;
+
 	public function __construct() 
 	{
 		$this->template = "templates/userProfileTemplate.php";
 
+
+        session_start();
+
+
 		$this->mainScreenText = "On this page you can change your profile information, as well as view the dogs you have added to the database.";
 		$this->databaseReply = " ";
+        $this->dogsAdded = array();
 
+        $username = "root"; 
+        $password = "901205"; 
+        $host = "localhost"; 
+        $dbname = "idog"; 
+
+        $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 
+         
+        try 
+        { 
+            $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password, $options); 
+        } 
+        catch(PDOException $ex) 
+        { 
+            die("Failed to connect to the database: " . $ex->getMessage()); 
+        } 
+         
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+        
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+        $query = " 
+            SELECT 
+                id,
+                name
+            FROM dog_info 
+            WHERE 
+                added_by = :added_by 
+        "; 
+             
+        // The parameter values 
+        $query_params = array( 
+             ':added_by' => $_SESSION['user']['id']
+        ); 
+             
+        try 
+        { 
+            // Execute the query against the database 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex) 
+        { 
+           // Note: On a production website, you should not output $ex->getMessage(). 
+           // It may provide an attacker with helpful information about your code.  
+            echo 'Failed to run query: ' . $ex->getMessage(); 
+        } 
+             
+        // Retrieve the dog location data from the database.
+        while($row = $stmt->fetch()) 
+        {
+            array_push($this->dogsAdded, $row);
+        }
     }
 
     public function changeUserData($email, $password, $name, $phone)
@@ -39,27 +98,22 @@ class userProfileModel
 	    
 	    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-        session_start();
+        
 
 
 
         // At the top of the page we check to see whether the user is logged in or not 
-    if(empty($_SESSION['user'])) 
-    { 
-        // If they are not, we redirect them to the login page. 
-        header("Location: .//index.php?route=main"); 
-         
-        // Remember that this die statement is absolutely critical.  Without it, 
-        // people can view your members-only content without logging in. 
-        die("Redirecting to .//index.php?route=main"); 
-    } 
-     
-   
-        // Make sure the user entered a valid E-Mail address 
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+        if(empty($_SESSION['user'])) 
         { 
-            die("Invalid E-Mail Address"); 
+            // If they are not, we redirect them to the login page. 
+            $url = 'index.php?route=main';
+            header("Location: $url"); 
+             
+            // Remember that this die statement is absolutely critical.  Without it, 
+            // people can view your members-only content without logging in. 
+            die("Redirecting to " . $url); 
         } 
+     
          
         // If the user is changing their E-Mail address, we need to make sure that 
         // the new value does not conflict with a value that is already in the system. 
@@ -76,7 +130,7 @@ class userProfileModel
             "; 
              
             // Define our query parameter values 
-            $query_params = array( 
+            $query_paramsCheck = array( 
                 ':email' => $email 
             ); 
              
@@ -84,7 +138,7 @@ class userProfileModel
             { 
                 // Execute the query 
                 $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
+                $result = $stmt->execute($query_paramsCheck); 
             } 
             catch(PDOException $ex) 
             { 
@@ -121,17 +175,8 @@ class userProfileModel
          
         // Initial query parameter values 
         $query_params = array( 
-            ':email' => $email, 
-            ':user_id' => $_SESSION['user']['id'], 
+            ':user_id' => $_SESSION['user']['id']
         ); 
-         
-        // If the user is changing their password, then we need parameter values 
-        // for the new password hash and salt too. 
-        if($password !== null) 
-        { 
-            $query_params[':password'] = $password; 
-            $query_params[':salt'] = $salt; 
-        } 
          
         // Note how this is only first half of the necessary update query.  We will dynamically 
         // construct the rest of it depending on whether or not the user is changing 
@@ -139,13 +184,25 @@ class userProfileModel
         $query = " 
             UPDATE users 
             SET 
-                email = :email 
+                
         "; 
          
         // If the user is changing their password, then we extend the SQL query 
         // to include the password and salt columns and parameter tokens too. 
+
+        if($email !== null)
+        {
+            $query_params[':email'] = $email;
+            $query .= "
+                email = :email
+            ";
+        }
+
+
         if($password !== null) 
         { 
+            $query_params[':password'] = $password; 
+            $query_params[':salt'] = $salt; 
             $query .= " 
                 , password = :password 
                 , salt = :salt 
@@ -154,6 +211,7 @@ class userProfileModel
 
         if($name !== null) 
         { 
+            $query_params[':name'] = $name;
             $query .= " 
                 , name = :name 
                  
@@ -162,6 +220,7 @@ class userProfileModel
 
         if($phone !== null) 
         { 
+            $query_params[':phone'] = $phone;
             $query .= " 
                 , phone = :phone 
                
@@ -192,14 +251,20 @@ class userProfileModel
          
         // Now that the user's E-Mail address has changed, the data stored in the $_SESSION 
         // array is stale; we need to update it so that it is accurate. 
-        $_SESSION['user']['email'] = $_POST['email']; // FIX IT
+        if($email !== null)
+            $_SESSION['user']['email'] = $email;
+        if($name !== null)
+            $_SESSION['user']['name'] = $name; 
+        if($phone !== null)
+            $_SESSION['user']['phone'] = $phone;
          
         // This redirects the user back to the members-only page after they register 
-        header("Location: private.php"); 
+        $url = 'index.php?route=main';
+        header("Location: $url"); 
          
         // Calling die or exit after performing a redirect using the header function 
         // is critical.  The rest of your PHP script will continue to execute and 
         // will be sent to the user if you do not die or exit. 
-        die("Redirecting to private.php");
+        die("Redirecting to main.php");
     }     
 }

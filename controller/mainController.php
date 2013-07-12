@@ -17,8 +17,8 @@ class mainController
 
     public function search()
     {
-    	if(isset($_POST[dogId]))
-    		$this->model->getDogCoordinates($_POST['dogId']);
+    	if(isset($_GET[dogId]))
+    		$this->model->getDogCoordinates($_GET['dogId']);
     }
 
     public function add()
