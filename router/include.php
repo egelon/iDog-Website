@@ -31,3 +31,4 @@ require_once($controllersFolder . 'liveMapController.php');
 require_once($modelsFolder . 'registrationModel.php');
 require_once($viewsFolder . 'registrationView.php');
 require_once($controllersFolder . 'registrationController.php');
+

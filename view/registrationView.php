@@ -23,7 +23,7 @@ class registrationView
 		$registrationForm = 
 		'
 			<section class="registrationForm cf">
-				<form class = "registrationform customform" name="registration" action="FIX" method="POST">
+				<form class = "registrationform customform" name="registration" action="index.php?route=registration&action=registeruser" method="POST">
 					<ul>		
 
 						<li>
