@@ -22,18 +22,18 @@ class userProfileView
 
 		$updateForm = 
 		'
-			<section class="updateForm cf">
-				<form class = "updateform customform" name="update" action="index. php?route=profile&action=updateuser" method="POST">
+			<section class="cf">
+				<form class = "addform" name="update" action="index.php?route=profile&action=updateuser" method="POST">
 					<ul>		
 
 						<li>
 							<label for="email">Please enter valid email address:</label>
-							<input type="text" name="email" id="emailField" placeholder="example@gmail.com" required>
+							<input type="text" name="email" id="emailField" placeholder="example@gmail.com">
 						</li>
 
 						<li>
 							<label for="password">Enter password:</label>
-							<input type="password" name="password" id="passwordField" placeholder="password" required>
+							<input type="password" name="password" id="passwordField" placeholder="password">
 						</li>
 
 						<li>

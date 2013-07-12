@@ -71,7 +71,6 @@ class mainModel
 
 	    if($row)
 	    {
-	    	//$arr = array('lat' => $row['lat'], 'lon' => $row['lon']);
 	        $url = './index.php?route=livemap&data=' . json_encode ($row);
 	        header( "Location: $url" );
 	    }
@@ -144,11 +143,7 @@ class mainModel
             die("Failed to run query: " . $ex->getMessage()); 
         } 
 
-
-
         $dogID = $db->lastInsertId();
-
-
 
         $query = " 
             INSERT INTO dog_location ( 
@@ -203,46 +198,33 @@ class mainModel
 			{
 				// file already exists error
 				echo "You have already uploaded this file.";
+				$this->databaseReply = 'File exists';
 			}
 			else
 			{		
 				move_uploaded_file($_FILES["picture"]["tmp_name"], $targetDir . $newfilename);
-				echo "File uploaded successfully.";		
+				//echo "File uploaded successfully.";	
+				$this->databaseReply =	'File uploaded successfully. Dog ID is: '. $dogID;	
 			}
 		}
 		elseif (empty($file_basename))
 		{	
 			// file selection error
-			echo "Please select a file to upload.";
+			//echo "Please select a file to upload.";
+			$this->databaseReply =	'Please select a file to upload.';	
 		} 
 		elseif ($filesize > 200000)
 		{	
 			// file size error
-			echo "The file you are trying to upload is too large.";
+			//echo "The file you are trying to upload is too large.";
+			$this->databaseReply =	'The file you are trying to upload is too large.';	
 		}
 		else
 		{
 			// file type error
-			echo "Only these file typs are allowed for upload: " . implode(', ',$allowed_file_types);
+			//echo "Only these file typs are allowed for upload: " . implode(', ',$allowed_file_types);
+			$this->databaseReply =	'Only these file typs are allowed for upload: ' . implode(', ',$allowed_file_types);
 			unlink($_FILES["picture"]["tmp_name"]);
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	}
 }

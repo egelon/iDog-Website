@@ -22,8 +22,8 @@ class registrationView
 
 		$registrationForm = 
 		'
-			<section class="loginform cf">
-				<form name="register" action="index.php?route=registration&action=registeruser" method="post">
+			<section class="cf">
+				<form class="addform" name="register" action="index.php?route=registration&action=registeruser" method="post">
 					<ul>
 						<li>
 							<label for="email">Email *</label>

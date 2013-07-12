@@ -11,7 +11,7 @@ class userProfileModel
 	{
 		$this->template = "templates/userProfileTemplate.php";
 
-		$this->mainScreenText = "Welcome to your profile! You can now add dogs to the database.";
+		$this->mainScreenText = "On this page you can change your profile information, as well as view the dogs you have added to the database.";
 		$this->databaseReply = " ";
 
     }
@@ -201,17 +201,5 @@ class userProfileModel
         // is critical.  The rest of your PHP script will continue to execute and 
         // will be sent to the user if you do not die or exit. 
         die("Redirecting to private.php");
-
-
-
-
-
-
-
-
-
-         
-        
-         
-       
+    }     
 }

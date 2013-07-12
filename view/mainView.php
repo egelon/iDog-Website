@@ -22,8 +22,8 @@ class mainView
 
 		$searchForm = 
 		'
-			<section class="searchForm cf">
-				<form class = "searchform customform" name="search" action="index.php?route=main&action=search" method="POST">
+			<section class="cf">
+				<form class = "addform" name="search" action="index.php?route=main&action=search" method="POST">
 					<ul>
 						<li>
 							<label for="dogId">Dog ID:</label>
@@ -42,8 +42,8 @@ class mainView
 
 		$loginForm = 
 		'
-			<section class="loginForm cf">
-				<form class = "loginform customform" name="login" action="./register/user_login.php" method="POST">
+			<section class="cf">
+				<form class = "addform" name="login" action="./register/user_login.php" method="POST">
 					<ul>
 						<li>
 							<label for="email">E-mail:</label>
@@ -71,8 +71,8 @@ class mainView
 
 		$addNewDogForm = 
 		'
-			<section class="searchForm cf">
-				<form enctype="multipart/form-data" class = "addform customform" name="search" action="index.php?route=main&action=add" method="POST">
+			<section class="cf">
+				<form enctype="multipart/form-data" class = "addform" name="search" action="index.php?route=main&action=add" method="POST">
 					<ul>
 						<li>
 							<label for="name">Dog name:</label>
