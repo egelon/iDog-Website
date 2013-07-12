@@ -12,7 +12,7 @@ class registrationModel
 		$this->template = "templates/userRegistrationTemplate.php";
 
 		$this->mainScreenText = "Hello, welcome to iDog!";
-		$this->databaseReply = "Enter a dog's ID and press Search";
+		$this->databaseReply = " ";
 
     }
 
@@ -31,6 +31,7 @@ class registrationModel
 	    } 
 	    catch(PDOException $ex) 
 	    { 
+	    	$this->databaseReply = "Failed to connect to the database: " . $ex->getMessage();
 	        die("Failed to connect to the database: " . $ex->getMessage()); 
 	    } 
 	     
@@ -52,6 +53,7 @@ class registrationModel
         // Ensure that the user has entered a non-empty password 
         if(empty($password)) 
         { 
+        	$this->databaseReply = "Please enter a password.";
             die("Please enter a password."); 
         } 
          
@@ -61,6 +63,7 @@ class registrationModel
         // http://us.php.net/manual/en/filter.filters.php 
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
         { 
+        	$this->databaseReply = "Invalid E-Mail Address";
             die("Invalid E-Mail Address"); 
         } 
          
@@ -97,6 +100,7 @@ class registrationModel
         { 
             // Note: On a production website, you should not output $ex->getMessage(). 
             // It may provide an attacker with helpful information about your code.  
+            $this->databaseReply = "Failed to connect to the database: " . $ex->getMessage();
             die("Failed to run query: " . $ex->getMessage()); 
         } 
          
@@ -108,54 +112,28 @@ class registrationModel
         // the database already and we should not allow the user to continue. 
         if($row) 
         { 
-            die("This username is already in use"); 
+        	$this->databaseReply = "This email is already in use";
+			die("This email is already in use"); 
         } 
          
-        // Now we perform the same type of check for the email address, in order 
-        // to ensure that it is unique. 
-        $query = " 
-            SELECT 
-                1 
-            FROM users 
-            WHERE 
-                email = :email 
-        "; 
-         
-        $query_params = array( 
-            ':email' => $_POST['email'] 
-        ); 
-         
-        try 
-        { 
-            $stmt = $db->prepare($query); 
-            $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex) 
-        { 
-            die("Failed to run query: " . $ex->getMessage()); 
-        } 
-         
-        $row = $stmt->fetch(); 
-         
-        if($row) 
-        { 
-            die("This email address is already registered"); 
-        } 
-         
+        
         // An INSERT query is used to add new rows to a database table. 
         // Again, we are using special tokens (technically called parameters) to 
         // protect against SQL injection attacks. 
         $query = " 
             INSERT INTO users ( 
-                username, 
+                email, 
                 password, 
-                salt, 
-                email 
+                salt,
+                name,
+                phone
+                
             ) VALUES ( 
-                :username, 
+                :email, 
                 :password, 
                 :salt, 
-                :email 
+                :name,
+                :phone 
             ) 
         "; 
          
@@ -174,7 +152,7 @@ class registrationModel
         // string representing the 32 byte sha256 hash of the password.  The original 
         // password cannot be recovered from the hash.  For more information: 
         // http://en.wikipedia.org/wiki/Cryptographic_hash_function 
-        $password = hash('sha256', $_POST['password'] . $salt); 
+        $password = hash('sha256', $password . $salt); 
          
         // Next we hash the hash value 65536 more times.  The purpose of this is to 
         // protect against brute force attacks.  Now an attacker must compute the hash 65537 
@@ -190,10 +168,11 @@ class registrationModel
         // store the original password; only the hashed version of it.  We do store 
         // the salt (in its plaintext form; this is not a security risk). 
         $query_params = array( 
-            ':username' => $_POST['username'], 
+            ':email' => $email, 
             ':password' => $password, 
             ':salt' => $salt, 
-            ':email' => $_POST['email'] 
+            ':name' => $name,
+            ':phone' => $phone
         ); 
          
         try 
@@ -210,7 +189,7 @@ class registrationModel
         } 
          
         // This redirects the user back to the login page after they register 
-        header("Location: login.php"); 
+        header("Location: ..//index.php?route=main"); 
          
         // Calling die or exit after performing a redirect using the header function 
         // is critical.  The rest of your PHP script will continue to execute and 
