@@ -13,6 +13,7 @@ class Router
         //$this->table['livemap'] = new Route('liveMapModel', 'liveMapView', 'liveMapController');
         $this->table['main'] = new Route('mainModel', 'mainView', 'mainController');
         $this->table['livemap'] = new Route('liveMapModel', 'liveMapView', 'liveMapController');
+        $this->table['registration'] = new Route('registrationModel', 'registrationView', 'registrationController');
         
 		// Add routes here
     } 
