@@ -59,9 +59,9 @@ class mainView
 							<input type="submit" name="submit" value="Login">
 						</li>
 						
-						<br>
-
+						<li>
 						<a href="FIX IT">Register</a>
+						</li>
 
 					</ul>
 				</form>
